@@ -1,8 +1,22 @@
 "use client";
+import { createGlobalStyle } from "styled-components";
 
-import styled from "styled-components";
+export const GlobalStyle = createGlobalStyle`
+  html {
+    font-size: 62.5%; /* 1rem = 10px */
+  }
 
-export const Container = styled.main`
-  width: 1200px;
-  background-color: #f4f4f5;
+  body {
+    background-color: #f0f0f0;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    font-size: 2rem;
+  }
+
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;  
+     padding: 2rem; 
+  }
 `;
