@@ -12,6 +12,7 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     font-size: 2rem;
+   font-family: "Varela Round", sans-serif;
   }
 
   .container {
