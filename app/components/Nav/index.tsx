@@ -23,11 +23,15 @@ export default function Nav() {
 
       {/* MENU DESKTOP */}
       <div className="menu">
-        <Link href="#">O que eu faço</Link>
-        <Link href="#">Meu trabalho</Link>
-        <Link href="#">Contato</Link>
+        <Link href="#do">O que eu faço</Link>
+        <Link href="#work">Meu trabalho</Link>
         <div className="contact">
-          <Link href="#">Entre em contato agora mesmo!</Link>
+          <Link
+            href="https://wa.me/5522992724146?text=Olá!%20Vim%20através%20do%20seu%20site.%20Podemos%20conversar?"
+            target="_blank"
+          >
+            💬 Entre em contato agora mesmo!
+          </Link>
         </div>
       </div>
 
@@ -48,20 +52,21 @@ export default function Nav() {
             ← voltar
           </div>
 
-          <Link href="#" onClick={() => setOpen(false)}>
+          <Link href="#do" onClick={() => setOpen(false)}>
             O que eu faço
           </Link>
 
-          <Link href="#" onClick={() => setOpen(false)}>
+          <Link href="#work" onClick={() => setOpen(false)}>
             Meu trabalho
           </Link>
 
-          <Link href="#" onClick={() => setOpen(false)}>
-            Contato
-          </Link>
-
           <div className="contact" onClick={() => setOpen(false)}>
-            <Link href="#">Entre em contato agora mesmo!</Link>
+            <Link
+              href="https://wa.me/5522992724146?text=Olá!%20Vim%20através%20do%20seu%20site.%20Podemos%20conversar?"
+              target="_blank"
+            >
+              💬 Entre em contato agora mesmo!
+            </Link>
           </div>
         </div>
       )}

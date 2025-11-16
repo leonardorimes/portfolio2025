@@ -15,7 +15,7 @@ export const Container = styled.div`
 
   .border {
     border-bottom: 0.5px solid rgba(106, 105, 105, 0.5);
-    top: 585px;
+    top: 605px;
     position: absolute;
     width: 60%;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* sombra */

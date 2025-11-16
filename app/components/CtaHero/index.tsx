@@ -16,7 +16,12 @@ export default function CtaHero() {
         existentes, garantindo entrega eficiente, clara e dentro do prazo.
       </p>
       <div className="contact">
-        <Link href="#">Entre em contato agora mesmo!</Link>
+        <Link
+          href="https://wa.me/5522992724146?text=Olá!%20Vim%20através%20do%20seu%20site.%20Podemos%20conversar?"
+          target="_blank"
+        >
+          💬 Entre em contato agora mesmo!
+        </Link>
       </div>
     </Container>
   );
