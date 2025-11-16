@@ -1,5 +1,5 @@
 "use client";
-import { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
   html {
@@ -24,9 +24,10 @@ export const GlobalStyle = createGlobalStyle`
    font-family: "Varela Round", sans-serif;
   }
 
-  .container {
-    /* max-width: 1400px; */
-    margin: 0 auto;  
-     /* padding: 2rem;  */
-  }
+`;
+
+export const Container = styled.div`
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
 `;

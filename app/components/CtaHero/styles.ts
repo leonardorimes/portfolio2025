@@ -8,10 +8,12 @@ export const Container = styled.div`
   position: relative;
   width: 800px;
   text-align: center;
+  gap: 2rem;
 
   h1 {
-    margin-bottom: 1px;
+    margin-bottom: 2px;
   }
+
   p {
     text-align: justify;
   }
@@ -19,18 +21,20 @@ export const Container = styled.div`
   & a {
     text-decoration: none;
   }
+
+  /* Botão WhatsApp */
   .contact {
-    background-color: transparent; /* mantém o "gap" visível */
-    border: 2px solid #25d366; /* borda visível sempre */
+    background-color: transparent;
+    border: 2px solid #25d366;
     border-radius: 999px;
-    padding: 0.3rem; /* 👈 espaço entre a borda e o fundo interno */
+    padding: 0.3rem;
     display: inline-block;
     transition: all 0.3s ease;
   }
 
   .contact a {
     display: block;
-    background-color: #25d366; /* fundo interno */
+    background-color: #25d366;
     color: #fff;
     padding: 0.6rem 1.6rem;
     border-radius: 999px;
@@ -51,5 +55,34 @@ export const Container = styled.div`
   .contact:active {
     transform: translateY(0);
     box-shadow: none;
+  }
+
+  /* -------------------------------
+        RESPONSIVIDADE
+  -------------------------------- */
+
+  /* Tablet */
+  @media (max-width: 1024px) {
+    width: 600px;
+    gap: 1.6rem;
+    font-size: 1.5rem;
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    width: 100%;
+    max-width: 90%;
+    padding: 1rem;
+    font-size: 1.5rem;
+
+    gap: 1.4rem;
+
+    .contact {
+      padding: 0.25rem;
+    }
+
+    .contact a {
+      padding: 0.5rem 1.2rem;
+    }
   }
 `;

@@ -42,6 +42,7 @@ export default function Hero() {
         <Image
           src="/leonardopretoebranco.png"
           alt="Foto de Leonardo Rimes"
+          className="img"
           fill
         />
       </LogoWrapper>
