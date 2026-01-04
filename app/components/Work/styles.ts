@@ -107,7 +107,7 @@ export const CardTitle = styled.h3`
 `;
 
 export const Description = styled.p`
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: #475569;
   margin-bottom: 12px;
 
@@ -129,7 +129,7 @@ export const Tag = styled.span`
   color: #4338ca;
   padding: 4px 10px;
   border-radius: 8px;
-  font-size: 0.75rem;
+  font-size: 1rem;
 
   /* Mobile: Ajusta o tamanho da tag */
   @media (max-width: 600px) {

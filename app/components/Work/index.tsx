@@ -42,6 +42,18 @@ export default function WorkSection() {
       url: "https://comunidade.terraventos.com.br/",
       tags: ["Next.js", "TypeScript", "TailwindCSS"],
     },
+    {
+      id: 5,
+      title: "Bolsim",
+      subtitle: "",
+      date: "2026",
+      category: "Android App",
+      description:
+        "O Bolsim é um app criado para ajudar você a organizar sua vida financeira de forma simples, rápida e prática. Com ele, você controla suas despesas mensais, registra seus gastos do dia a dia e acompanha suas categorias para entender exatamente para onde seu dinheiro está indo.",
+      image: "/projects/bolsim.png",
+      url: "https://play.google.com/store/apps/details?id=com.leonardo.bolsim",
+      tags: ["reactnative", "expo", "supabase"],
+    },
   ];
 
   return (
