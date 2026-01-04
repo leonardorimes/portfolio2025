@@ -14,7 +14,7 @@ export default function WorkSection() {
       category: "Institucional",
       description:
         "Website institucional completo para agência de viagens, desenvolvido em React e Tailwind. Inclui apresentação de destinos nacionais e internacionais, carrosséis, seções estruturadas, depoimentos e layout totalmente responsivo, oferecendo uma experiência moderna e orientada à conversão.",
-      image: "/projects/vlk.png",
+      image: "/projects/turismo.png",
       url: "https://vlkturismo.com.br/",
       tags: ["React", "Tailwind"],
     },
