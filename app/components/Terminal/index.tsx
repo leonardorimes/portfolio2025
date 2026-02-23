@@ -43,7 +43,7 @@ export default function Terminal() {
       content: (
         <>
           <span className="import">import</span>{" "}
-          {"{Laravel, Adonis, Next, Nuxt}"} <span className="from">from</span>{" "}
+          {"{Next}"} <span className="from">from</span>{" "}
           <span className="path">{`'./Frameworks/Backend'`}</span>;
         </>
       ),
@@ -53,7 +53,7 @@ export default function Terminal() {
       content: (
         <>
           <span className="import">import</span>{" "}
-          {"{React, Vue, Alpine, Livewire, React Native, Ionic}"}{" "}
+          {"{React, React Native}"}{" "}
           <span className="from">from</span>{" "}
           <span className="path">{`'./Frameworks/Frontend'`}</span>;
         </>
@@ -64,7 +64,7 @@ export default function Terminal() {
       content: (
         <>
           <span className="import">import</span>{" "}
-          {"{MySQL, Postgres, Redis, MongoDB, Solr}"}{" "}
+          {"{MySQL, Postgres, MongoDB}"}{" "}
           <span className="from">from</span>{" "}
           <span className="path">{`'./Database/Engines'`}</span>;
         </>

@@ -6,6 +6,18 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 62.5%; /* 1rem = 10px */
   }
 
+  :root {
+    --title-size: 5.6rem;
+    --subtitle-size: 3.6rem;
+  }
+
+  @media (max-width: 600px) {
+    :root {
+      --title-size: 2.5rem;
+      --subtitle-size: 1.6rem;
+    }
+  }
+
   *,
 *::before,
 *::after {

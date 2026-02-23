@@ -70,18 +70,10 @@ export const TextBlock = styled.div`
 `;
 
 export const Title = styled.h1`
-  font-size: 42px;
+  font-size: var(--title-size);
   line-height: 1.3;
   font-weight: 700;
   margin-bottom: 20px;
-
-  @media (max-width: 900px) {
-    font-size: 34px;
-  }
-
-  @media (max-width: 600px) {
-    font-size: 28px;
-  }
 `;
 
 export const Paragraph = styled.p`

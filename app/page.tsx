@@ -6,6 +6,7 @@ import Work from "./components/Work";
 import IntroSection from "./components/IntroSection";
 import Nav from "./components/Nav";
 import Terminal from "./components/Terminal";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <IntroSection />
       <Terminal />
       <Work />
+      <Footer />
     </>
   );
 }

@@ -30,8 +30,7 @@ export default function Hero() {
   return (
     <Container>
       <h1>Oi! Eu sou o Leonardo</h1>
-      <h2>Web & App Developer</h2>
-      <div className="border"> </div>
+      <h2>Full Stack Developer</h2>
       <LogoWrapper>
         <div
           className="square"
@@ -46,6 +45,7 @@ export default function Hero() {
           fill
         />
       </LogoWrapper>
+      <div className="border"> </div>
       <CtaHero />
     </Container>
   );

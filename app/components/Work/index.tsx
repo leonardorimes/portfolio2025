@@ -1,5 +1,13 @@
 "use client";
 
+import {
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+  useState,
+  type MouseEvent,
+} from "react";
 import WorkCard from "./WorkCard";
 import { Section, Title, Subtitle, Grid } from "./styles";
 import { WorkProject } from "./Work.types";
@@ -54,7 +62,101 @@ export default function WorkSection() {
       url: "https://play.google.com/store/apps/details?id=com.leonardo.bolsim",
       tags: ["reactnative", "expo", "supabase"],
     },
+        {
+      id: 6,
+      title: "GestorPro",
+      subtitle: "",
+      date: "2026",
+      category: "Android App",
+      description: "Sistema web para gestão de clientes e serviços, criado para simular um produto real e aplicado com boas práticas de frontend e backend, focando em código limpo escalabilidade e experiência do usuário.",
+        image: "/projects/gestorPro.png",
+      url: "https://gestorpro.leonardorimes.dev/",
+      tags: ["TypeScript", "React", "Next.js", "Node.js", "PostgreSQL"],
+    },
   ];
+  const hasOddCount = projects.length % 2 === 1;
+  const [highlightIndex, setHighlightIndex] = useState(
+    hasOddCount ? projects.length - 1 : 0
+  );
+  const cardRefs = useRef<Map<number, HTMLAnchorElement>>(new Map());
+  const prevPositions = useRef<Map<number, DOMRect>>(new Map());
+  const shouldAnimate = useRef(false);
+  const nextChangeAt = useRef<number | null>(null);
+
+  const capturePositionsForFlip = () => {
+    const currentPositions = new Map<number, DOMRect>();
+    cardRefs.current.forEach((el, id) => {
+      currentPositions.set(id, el.getBoundingClientRect());
+    });
+    prevPositions.current = currentPositions;
+    shouldAnimate.current = true;
+  };
+
+  useEffect(() => {
+    if (!hasOddCount) return;
+
+    if (nextChangeAt.current === null) {
+      nextChangeAt.current = Date.now() + 20000;
+    }
+
+    const interval = setInterval(() => {
+      const now = Date.now();
+      if (nextChangeAt.current === null) return;
+      if (now < nextChangeAt.current) return;
+
+      capturePositionsForFlip();
+      setHighlightIndex((prev) => (prev + 1) % projects.length);
+      nextChangeAt.current = now + 20000;
+    }, 250);
+
+    return () => clearInterval(interval);
+  }, [hasOddCount, projects.length]);
+
+  useLayoutEffect(() => {
+    if (!shouldAnimate.current) return;
+
+    const nextPositions = new Map<number, DOMRect>();
+    cardRefs.current.forEach((el, id) => {
+      nextPositions.set(id, el.getBoundingClientRect());
+    });
+
+    cardRefs.current.forEach((el, id) => {
+      const prevBox = prevPositions.current.get(id);
+      const nextBox = nextPositions.get(id);
+      if (!prevBox || !nextBox) return;
+
+      const dx = prevBox.left - nextBox.left;
+      const dy = prevBox.top - nextBox.top;
+
+      if (dx !== 0 || dy !== 0) {
+        el.animate(
+          [
+            { transform: `translate(${dx}px, ${dy}px)` },
+            { transform: "translate(0, 0)" },
+          ],
+          { duration: 600, easing: "cubic-bezier(0.22, 0.61, 0.36, 1)" }
+        );
+      }
+    });
+
+    shouldAnimate.current = false;
+  }, [highlightIndex]);
+
+  const orderedProjects = useMemo(() => {
+    if (!hasOddCount) return projects;
+
+    const highlighted = projects[highlightIndex];
+    const rest = projects.filter((_, index) => index !== highlightIndex);
+    return [highlighted, ...rest];
+  }, [hasOddCount, highlightIndex, projects]);
+
+  const setCardRef = (id: number) => (el: HTMLAnchorElement | null) => {
+    if (el) {
+      cardRefs.current.set(id, el);
+    } else {
+      cardRefs.current.delete(id);
+    }
+  };
 
   return (
     <Container>
@@ -63,8 +165,24 @@ export default function WorkSection() {
         <Subtitle>Projetos que criei utilizando várias tecnologias</Subtitle>
 
         <Grid>
-          {projects.map((p) => (
-            <WorkCard key={p.id} project={p} />
+          {orderedProjects.map((p, index) => (
+            <WorkCard
+              key={p.id}
+              project={p}
+              ref={setCardRef(p.id)}
+              className={hasOddCount && index === 0 ? "span-2 highlight" : ""}
+              isActive={hasOddCount ? index === 0 : undefined}
+              onClick={(event: MouseEvent<HTMLAnchorElement>) => {
+                if (!hasOddCount) return;
+                if (index !== 0) {
+                  event.preventDefault();
+                  capturePositionsForFlip();
+                  setHighlightIndex(
+                    projects.findIndex((proj) => proj.id === p.id)
+                  );
+                }
+              }}
+            />
           ))}
         </Grid>
       </Section>

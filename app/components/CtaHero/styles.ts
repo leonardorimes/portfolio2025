@@ -11,6 +11,8 @@ export const Container = styled.div`
   gap: 2rem;
 
   h1 {
+    font-size: var(--title-size);
+    line-height: 1.1;
     margin-bottom: 2px;
   }
 
