@@ -1,6 +1,6 @@
 "use client";
 
-import { forwardRef } from "react";
+import { forwardRef, type MouseEventHandler } from "react";
 import {
   CardWrapper,
   Image,
@@ -16,7 +16,7 @@ import { WorkProject } from "./Work.types";
 interface Props {
   project: WorkProject;
   className?: string;
-  onClick?: () => void;
+  onClick?: MouseEventHandler<HTMLAnchorElement>;
   isActive?: boolean;
 }
 
