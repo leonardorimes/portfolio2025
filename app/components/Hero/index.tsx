@@ -29,7 +29,7 @@ export default function Hero() {
 
   return (
     <Container>
-      <h1>Oi! Eu sou o Leonardo</h1>
+      <h1>Oi! Eu sou o Leonardooo</h1>
       <h2>Full Stack Developer</h2>
       <LogoWrapper>
         <div

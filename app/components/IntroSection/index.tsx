@@ -19,7 +19,7 @@ export default function IntroSection() {
           <Title>
             Mas antes de tudo…
             <br />
-            quem sou eu? Vamos lá.
+            quem sou eu? Vamos{"\u00A0"}lá.
           </Title>
 
           <Paragraph>Meu nome é Leonardo e sou Full Stack Developer</Paragraph>
@@ -38,9 +38,10 @@ export default function IntroSection() {
           </Paragraph>
 
           <Paragraph>
-            No front-end, trabalho com <Highlight>React</Highlight> e{" "}
-            <Highlight>Next.js</Highlight> para criar interfaces modernas e bem
-            estruturadas; no mobile, desenvolvo com{" "}
+            No front-end, trabalho com <Highlight>React</Highlight>,{" "}
+            <Highlight>Angular</Highlight> e <Highlight>Next.js</Highlight> para
+            criar interfaces modernas e bem estruturadas; no mobile, desenvolvo
+            com{" "}
             <Highlight>React Native</Highlight>, entregando aplicativos com
             experiência nativa; e no back-end utilizo{" "}
             <Highlight>Node.js</Highlight>, <Highlight>NestJS</Highlight> e

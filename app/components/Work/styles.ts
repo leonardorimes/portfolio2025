@@ -127,9 +127,18 @@ export const Description = styled.p`
   color: #475569;
   margin-bottom: 12px;
 
+  ${CardWrapper}[data-active="true"] & {
+    font-size: 1.6rem;
+    line-height: 1.5;
+  }
+
   /* Mobile: Ajusta o tamanho da fonte */
   @media (max-width: 600px) {
     font-size: 1.2rem;
+
+    ${CardWrapper}[data-active="true"] & {
+      font-size: 1.3rem;
+    }
   }
 `;
 

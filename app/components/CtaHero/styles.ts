@@ -9,6 +9,7 @@ export const Container = styled.div`
   width: 800px;
   text-align: center;
   gap: 2rem;
+  margin-top: 4rem;
 
   h1 {
     font-size: var(--title-size);

@@ -24,7 +24,7 @@ export const Container = styled.div`
     border-bottom: 0.5px solid rgba(106, 105, 105, 0.5);
     position: relative;
     width: min(680px, 80%);
-    margin: 1.5rem auto 0;
+    margin: -4.8rem auto 0;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* sombra */
   }
 `;
@@ -59,6 +59,4 @@ export const LogoWrapper = styled.div`
       top: 80px;
     }
   }
-
-
 `;
