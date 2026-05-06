@@ -46,7 +46,7 @@ export default function IntroSection() {
             experiência nativa; e no back-end utilizo{" "}
             <Highlight>Node.js</Highlight>, <Highlight>NestJS</Highlight> e
             banco de dados relacionais com
-            <Highlight>SQL</Highlight> para construir APIs escaláveis, seguras e
+            <Highlight> SQL</Highlight> para construir APIs escaláveis, seguras e
             de alta performance.
           </Paragraph>
         </TextBlock>

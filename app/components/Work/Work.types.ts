@@ -8,4 +8,5 @@ export interface WorkProject {
   image: string;
   url: string;
   tags: string[];
+  featured?: boolean;
 }

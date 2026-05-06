@@ -1,43 +1,37 @@
 "use client";
 
-import { forwardRef, type MouseEventHandler } from "react";
 import {
   CardWrapper,
+  ImageContainer,
   Image,
+  ContentContainer,
   Meta,
   CardTitle,
   Description,
   Tags,
   Tag,
-  OpenButton,
+  ViewProject,
 } from "./styles";
 import { WorkProject } from "./Work.types";
 
 interface Props {
   project: WorkProject;
   className?: string;
-  onClick?: MouseEventHandler<HTMLAnchorElement>;
-  isActive?: boolean;
 }
 
-const WorkCard = forwardRef<HTMLAnchorElement, Props>(
-  ({ project, className, onClick, isActive }, ref) => {
-    return (
+const WorkCard = ({ project, className }: Props) => {
+  return (
     <CardWrapper
       href={project.url}
       target="_blank"
       rel="noopener noreferrer"
-      className={className}
-      ref={ref}
-      onClick={onClick}
-      data-active={
-        isActive === undefined ? undefined : isActive ? "true" : "false"
-      }
+      className={className || ""}
     >
-      {isActive && <OpenButton>Clique para abrir o projeto</OpenButton>}
+      <ImageContainer className="image-container">
+        <Image src={project.image} alt={project.title} className="card-image" />
+      </ImageContainer>
 
-      <Image src={project.image} alt={project.title} />
-
+      <ContentContainer className="content-container">
         <Meta>
           {project.date} • {project.category}
         </Meta>
@@ -46,16 +40,21 @@ const WorkCard = forwardRef<HTMLAnchorElement, Props>(
 
         <Description>{project.description}</Description>
 
-      <Tags>
-        {project.tags.map((tag) => (
-          <Tag key={tag}>{tag}</Tag>
-        ))}
-      </Tags>
+        <Tags>
+          {project.tags.map((tag) => (
+            <Tag key={tag}>{tag}</Tag>
+          ))}
+        </Tags>
+
+        <ViewProject className="view-project">
+          Acessar Projeto
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </ViewProject>
+      </ContentContainer>
     </CardWrapper>
   );
-  }
-);
-
-WorkCard.displayName = "WorkCard";
+};
 
 export default WorkCard;

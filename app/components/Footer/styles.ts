@@ -17,8 +17,10 @@ export const Content = styled.div`
   flex-wrap: wrap;
 
   span {
-    font-weight: 600;
-    font-size: 1.8rem;
+    font-weight: 800;
+    font-size: 2rem;
+    color: #111;
+    letter-spacing: -0.5px;
   }
 `;
 

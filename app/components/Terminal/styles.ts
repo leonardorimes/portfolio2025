@@ -98,7 +98,7 @@ export const Line = styled.pre<{ animated?: boolean }>`
     color: #38bdf8;
   }
   .keyword {
-    color: #facc15;
+    color: #a78bfa;
   }
   .var {
     color: #86efac;

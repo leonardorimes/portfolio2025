@@ -92,7 +92,7 @@ export const Paragraph = styled.p`
 `;
 
 export const Highlight = styled.span`
-  color: #6ab3ff;
+  color: #a78bfa;
   font-weight: 600;
 `;
 
@@ -126,7 +126,8 @@ export const PhotoWrapper = styled.div`
     top: 12px;
     left: 42px;
     transform: rotate(4deg);
-    background: #00000033;
+    background: rgba(139, 92, 246, 0.2);
+    border: 1px solid rgba(139, 92, 246, 0.3);
   }
 
   .main-photo {

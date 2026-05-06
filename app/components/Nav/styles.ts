@@ -18,6 +18,11 @@ export const NavBar = styled.nav`
   & a {
     text-decoration: none;
     color: #6b6b6b;
+    transition: color 0.3s ease;
+  }
+
+  & a:hover {
+    color: #8b5cf6;
   }
 
   /* DESKTOP MENU */
